@@ -1,7 +1,14 @@
 # Ferraxis
 
+![Ferraxis — compiler diversity, forged](docs/assets/ferraxis/ferraxis-header-art.png)
+
 Ferraxis is an independent Rust compiler implementation focused on compiler diversity,
 portability, self-hosting, and backend independence.
+
+**[Open the Ferraxis project page →](https://darkstardevx.github.io/ferraxis/)**
+
+The page is the visual entry point for the project: architecture, current Phase 0
+capabilities, principles, and the first executable token-probe workflow.
 
 ## The gap
 

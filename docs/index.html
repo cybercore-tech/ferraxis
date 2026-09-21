@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#070a0c" />
+    <meta name="description" content="Ferraxis — an independent Rust compiler implementation focused on compiler diversity, portability, and backend independence." />
+    <meta property="og:title" content="Ferraxis — a second path to machine code" />
+    <meta property="og:description" content="An independent Rust compiler implementation built around evidence, portability, and backend-neutral architecture." />
+    <meta property="og:image" content="assets/ferraxis/ferraxis-header-art.png" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="assets/ferraxis-mark.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Ferraxis — Compiler Diversity, Forged</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="shell nav">
+        <a class="brand" href="#top" aria-label="Ferraxis home">
+          <img src="assets/ferraxis-mark.svg" alt="" />
+          <span>FERRAXIS<small>INDEPENDENT RUST COMPILER</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#architecture">Architecture</a>
+          <a href="#principles">Principles</a>
+          <a href="#quickstart">Quickstart</a>
+          <a href="https://github.com/darkstardevx/ferraxis">GitHub ↗</a>
+        </nav>
+        <span class="nav-meta">PHASE_0 // FOUNDATION</span>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="shell hero-inner">
+          <div class="eyebrow">Compiler diversity / backend independence</div>
+          <h1>A second path from Rust source to <em>machine code.</em></h1>
+          <p class="hero-copy">Ferraxis is an independent Rust compiler implementation built around its own frontend, semantic analysis, intermediate representation, and backend interfaces — without relying on rustc internals or requiring LLVM.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/darkstardevx/ferraxis">Explore the repository <span>↗</span></a>
+            <a class="button button-secondary" href="#quickstart">Run the first slice <span>↓</span></a>
+          </div>
+          <div class="signal-row" aria-label="Project signals">
+            <span class="signal"><i></i> Rust workspace</span>
+            <span class="signal"><i></i> Backend-neutral</span>
+            <span class="signal"><i></i> Evidence-driven</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark" id="principles">
+        <div class="shell">
+          <div class="section-heading">
+            <div class="eyebrow">The operating alloy</div>
+            <h2>Built for a compiler ecosystem with <em>more than one path.</em></h2>
+            <p>Rust has an exceptional reference compiler. Ferraxis explores what becomes possible when an independently engineered implementation can prove its own assumptions, choose its own backends, and carry the language forward with a separate architectural spine.</p>
+          </div>
+          <div class="section-grid">
+            <article class="spec-card"><span class="index">01 / CORRECTNESS</span><h3>Correctness first</h3><p>Behavior is earned through explicit evidence, not compatibility hacks or accidental implementation details.</p></article>
+            <article class="spec-card"><span class="index">02 / PORTABILITY</span><h3>Portable by design</h3><p>Backend interfaces stay independent from convenience, keeping future targets open.</p></article>
+            <article class="spec-card"><span class="index">03 / SEMANTICS</span><h3>Specification authority</h3><p>When sources disagree, Ferraxis follows a documented hierarchy of semantic authority.</p></article>
+            <article class="spec-card"><span class="index">04 / EVIDENCE</span><h3>Assumptions exposed</h3><p>Differential tests and semantic records make the path inspectable, repeatable, and honest.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="architecture">
+        <div class="shell pipeline">
+          <div class="pipeline-art" role="img" aria-label="Abstract Ferraxis compiler pipeline artwork"></div>
+          <div>
+            <div class="eyebrow">Architecture / signal path</div>
+            <div class="section-heading"><h2>From source to output, every stage has a <em>place.</em></h2><p>Ferraxis is intentionally split into layers that can be reasoned about independently and connected through durable interfaces.</p></div>
+            <div class="steps">
+              <article class="step"><span class="step-no">01 / INPUT</span><div><h3>Source &amp; spans</h3><p>Source storage, byte positions, and precise spans give diagnostics a stable foundation.</p></div></article>
+              <article class="step"><span class="step-no">02 / MEANING</span><div><h3>Lexing &amp; semantics</h3><p>The frontend turns Rust syntax into evidence-backed, deterministic intermediate structures.</p></div></article>
+              <article class="step"><span class="step-no">03 / OUTPUT</span><div><h3>Backend interfaces</h3><p>Code generation stays behind an explicit boundary so portability is an architectural property.</p></div></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-dark">
+        <div class="shell">
+          <div class="section-heading"><div class="eyebrow">Visual system / forged artifacts</div><h2>Every signal gets a <em>surface.</em></h2><p>The Ferraxis interface uses machined panels, ember seams, and cyan signal paths to make invisible compiler work legible at a glance.</p></div>
+          <div class="card-grid">
+            <article class="showcase-card project"><div class="showcase-copy"><div class="eyebrow">Project surface</div><h3>Independent by construction.</h3><p>Frontend, IR, and backend boundaries are visible parts of the system — not hidden implementation trivia.</p></div></article>
+            <article class="showcase-card release"><div class="showcase-copy"><div class="eyebrow">Release surface</div><h3>Evidence travels with the artifact.</h3><p>Each milestone is framed by tests, semantic records, and a clear explanation of what the compiler can prove today.</p></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="quickstart">
+        <div class="shell">
+          <div class="section-heading"><div class="eyebrow">First executable slice</div><h2>Inspect the signal <em>yourself.</em></h2><p>Ferraxis is in Phase 0: compiler foundation. The first executable slice can store source, track spans, emit diagnostics, and dump a small deterministic token stream.</p></div>
+          <div class="terminal-layout">
+            <div class="terminal">
+              <div class="terminal-top"><span class="lights"><i></i><i></i><i></i></span><span>ferraxis / token probe</span><span>READ_ONLY</span></div>
+              <pre><span class="prompt">$</span> <span class="command">cargo run -p ferraxis -- --emit=tokens path/to/input.rs</span>
+
+<span class="output">source  &gt;  spans  &gt;  lexer  &gt;  token stream</span>
+Token { kind: KeywordFn, span: 0..2 }
+Token { kind: Ident("main"), span: 3..7 }
+Token { kind: Eof, span: 7..7 }</pre>
+            </div>
+            <aside class="side-panel"><h3>Foundation status</h3><ul class="check-list"><li>Source-file storage and byte positions</li><li>Diagnostic data structures</li><li><code>fn</code>, ASCII identifiers, whitespace, and EOF lexing</li><li>Architecture and semantic-evidence documentation</li><li>Deterministic validation gates</li></ul></aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="shell footer-inner"><span><strong>FERRAXIS</strong> · compiler diversity, forged carefully.</span><span><a href="https://github.com/darkstardevx/ferraxis">GitHub</a> · <a href="https://github.com/darkstardevx/ferraxis/blob/main/README.md">README</a> · <a href="https://github.com/darkstardevx/ferraxis/blob/main/PROJECT_SPEC.md">Project spec</a></span></div>
+    </footer>
+  </body>
+</html>

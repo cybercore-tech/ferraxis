@@ -1,0 +1,138 @@
+:root {
+  --void: #070a0c;
+  --panel: #0d1316;
+  --panel-hi: #131c20;
+  --line: #26363a;
+  --text: #e8efee;
+  --muted: #91a1a3;
+  --copper: #ff7135;
+  --ember: #ffb14b;
+  --cyan: #39d9ef;
+  --lime: #b9f15b;
+  --steel: #bfc9c9;
+  --shadow: 0 24px 80px rgb(0 0 0 / .34);
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--void);
+  color: var(--text);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: var(--void); }
+a { color: inherit; text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.shell { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+.mono, code, pre, .eyebrow, .nav-meta, .metric-label { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace; }
+.mono { color: var(--cyan); }
+
+.site-header { position: absolute; z-index: 3; top: 0; left: 0; width: 100%; border-bottom: 1px solid rgb(255 255 255 / .08); background: linear-gradient(180deg, rgb(4 7 8 / .82), transparent); }
+.nav { display: flex; align-items: center; justify-content: space-between; min-height: 76px; gap: 24px; }
+.brand { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .18em; font-size: .82rem; }
+.brand img { width: 38px; height: 38px; filter: drop-shadow(0 0 14px rgb(255 113 53 / .35)); }
+.brand small { display: block; color: var(--muted); font-size: .55rem; font-weight: 500; letter-spacing: .12em; margin-top: 4px; }
+.nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: .78rem; }
+.nav-links a:hover { color: var(--text); }
+.nav-meta { font-size: .65rem; color: var(--lime); letter-spacing: .08em; }
+
+.hero { min-height: 760px; display: grid; align-items: end; position: relative; isolation: isolate; overflow: hidden; background: #080c0e url("assets/ferraxis/ferraxis-header-art.png") 57% center / cover no-repeat; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #070a0c 0%, rgb(7 10 12 / .94) 28%, rgb(7 10 12 / .18) 64%, rgb(7 10 12 / .15)), linear-gradient(0deg, #070a0c 0%, transparent 32%, rgb(7 10 12 / .42)); }
+.hero::after { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .45; background: radial-gradient(circle at 16% 33%, rgb(57 217 239 / .1), transparent 24%), radial-gradient(circle at 78% 64%, rgb(255 113 53 / .1), transparent 28%); mix-blend-mode: screen; }
+.hero-inner { padding: 148px 0 92px; }
+.eyebrow { color: var(--lime); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; }
+.eyebrow::before { content: "// "; color: var(--copper); }
+h1, h2, h3, p { margin-top: 0; }
+h1 { max-width: 700px; margin-bottom: 26px; font-size: clamp(3.1rem, 7vw, 6.7rem); line-height: .91; letter-spacing: -.075em; font-weight: 820; }
+h1 em { color: var(--ember); font-style: normal; }
+.hero-copy { max-width: 570px; color: #c8d1d0; font-size: clamp(1rem, 1.6vw, 1.25rem); line-height: 1.7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.button { display: inline-flex; align-items: center; gap: 11px; padding: 13px 17px; border: 1px solid var(--line); border-radius: 3px; font-size: .78rem; font-weight: 700; letter-spacing: .04em; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+.button:hover { transform: translateY(-2px); border-color: var(--cyan); }
+.button-primary { color: #071012; border-color: var(--cyan); background: var(--cyan); }
+.button-secondary { background: rgb(13 19 22 / .74); backdrop-filter: blur(12px); }
+.signal-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 34px; }
+.signal { display: inline-flex; align-items: center; gap: 8px; padding: 8px 10px; border: 1px solid rgb(255 255 255 / .12); border-radius: 2px; color: var(--muted); background: rgb(5 9 10 / .54); font: .65rem "JetBrains Mono", monospace; }
+.signal i { display: block; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 12px var(--lime); }
+
+.section { padding: 112px 0; border-top: 1px solid rgb(255 255 255 / .08); position: relative; }
+.section-heading { max-width: 700px; margin-bottom: 48px; }
+.section-heading h2 { margin: 12px 0 16px; font-size: clamp(2.2rem, 4vw, 4rem); line-height: .98; letter-spacing: -.06em; }
+.section-heading h2 em { color: var(--cyan); font-style: normal; }
+.section-heading p { color: var(--muted); line-height: 1.7; }
+.section-dark { background: linear-gradient(180deg, #080c0e, #0b1114); }
+.section-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.spec-card { min-height: 180px; padding: 22px; border: 1px solid var(--line); background: linear-gradient(145deg, rgb(19 28 32 / .9), rgb(8 12 14 / .95)); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+.spec-card::after { content: ""; position: absolute; right: -22px; bottom: -22px; width: 86px; height: 86px; border: 1px solid rgb(57 217 239 / .28); transform: rotate(45deg); }
+.spec-card:nth-child(2)::after { border-color: rgb(255 113 53 / .34); }
+.spec-card:nth-child(3)::after { border-color: rgb(185 241 91 / .32); }
+.spec-card:nth-child(4)::after { border-color: rgb(191 201 201 / .3); }
+.spec-card .index { color: var(--copper); font: .68rem "JetBrains Mono", monospace; }
+.spec-card h3 { margin: 26px 0 10px; font-size: 1.05rem; }
+.spec-card p { color: var(--muted); font-size: .86rem; line-height: 1.6; }
+
+.pipeline { display: grid; grid-template-columns: 1fr 1.25fr; gap: 68px; align-items: center; }
+.pipeline-art { min-height: 420px; border: 1px solid var(--line); background: url("assets/ferraxis/ferraxis-project-card.png") center / cover; position: relative; overflow: hidden; box-shadow: var(--shadow); }
+.pipeline-art::before { content: "FER\A RAXIS"; white-space: pre; position: absolute; top: 20px; left: 22px; color: rgb(255 255 255 / .55); font: 700 .66rem/1.35 "JetBrains Mono", monospace; letter-spacing: .18em; }
+.pipeline-art::after { content: "BACKEND-NEUTRAL / SIGNAL STABLE"; position: absolute; right: 20px; bottom: 20px; color: var(--lime); font: .6rem "JetBrains Mono", monospace; letter-spacing: .1em; }
+.steps { display: grid; gap: 0; border-left: 1px solid var(--line); }
+.step { position: relative; display: grid; grid-template-columns: 72px 1fr; gap: 18px; padding: 0 0 34px 28px; }
+.step:last-child { padding-bottom: 0; }
+.step::before { content: ""; position: absolute; left: -5px; top: 4px; width: 9px; height: 9px; border-radius: 50%; background: var(--copper); box-shadow: 0 0 16px rgb(255 113 53 / .7); }
+.step:nth-child(2)::before { background: var(--cyan); box-shadow: 0 0 16px rgb(57 217 239 / .7); }
+.step:nth-child(3)::before { background: var(--lime); box-shadow: 0 0 16px rgb(185 241 91 / .7); }
+.step .step-no { color: var(--muted); font: .66rem "JetBrains Mono", monospace; padding-top: 2px; }
+.step h3 { margin: 0 0 8px; font-size: 1.12rem; }
+.step p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.65; }
+
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.showcase-card { min-height: 330px; padding: 28px; border: 1px solid var(--line); background-position: center; background-size: cover; position: relative; overflow: hidden; display: flex; align-items: end; }
+.showcase-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(5 8 9 / .98) 0%, rgb(5 8 9 / .72) 45%, rgb(5 8 9 / .08) 100%); }
+.showcase-card.release { background-image: url("assets/ferraxis/ferraxis-release-card.png"); }
+.showcase-card.project { background-image: url("assets/ferraxis/ferraxis-project-card.png"); }
+.showcase-copy { position: relative; max-width: 420px; }
+.showcase-copy .eyebrow { color: var(--cyan); }
+.showcase-copy h3 { margin: 10px 0; font-size: 1.5rem; letter-spacing: -.04em; }
+.showcase-copy p { margin: 0; color: #b7c1c0; line-height: 1.6; font-size: .86rem; }
+
+.terminal-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 20px; }
+.terminal, .side-panel { border: 1px solid var(--line); background: #080c0e; box-shadow: var(--shadow); }
+.terminal-top { display: flex; align-items: center; justify-content: space-between; padding: 11px 15px; border-bottom: 1px solid var(--line); color: var(--muted); font: .65rem "JetBrains Mono", monospace; }
+.lights { display: flex; gap: 6px; }
+.lights i { width: 8px; height: 8px; border-radius: 50%; background: var(--copper); }
+.lights i:nth-child(2) { background: var(--ember); }
+.lights i:nth-child(3) { background: var(--lime); }
+pre { overflow-x: auto; margin: 0; padding: 25px; color: #cbd6d5; font-size: .8rem; line-height: 1.8; }
+pre .prompt { color: var(--copper); }
+pre .command { color: var(--cyan); }
+pre .output { color: var(--lime); }
+.side-panel { padding: 24px; }
+.side-panel h3 { margin-bottom: 18px; }
+.check-list { display: grid; gap: 13px; margin: 0; padding: 0; list-style: none; }
+.check-list li { display: flex; gap: 10px; color: var(--muted); line-height: 1.45; font-size: .86rem; }
+.check-list li::before { content: "↳"; color: var(--copper); font-family: monospace; }
+
+.footer { padding: 38px 0 54px; border-top: 1px solid rgb(255 255 255 / .08); color: var(--muted); font-size: .78rem; }
+.footer-inner { display: flex; justify-content: space-between; gap: 24px; align-items: center; }
+.footer a { color: var(--text); }
+.footer a:hover { color: var(--cyan); }
+
+@media (max-width: 900px) {
+  .hero { min-height: 720px; background-position: 61% center; }
+  .section-grid { grid-template-columns: repeat(2, 1fr); }
+  .pipeline, .terminal-layout { grid-template-columns: 1fr; gap: 36px; }
+}
+@media (max-width: 620px) {
+  .shell { width: min(100% - 28px, 1180px); }
+  .nav-links { display: none; }
+  .nav-meta { font-size: .55rem; }
+  .hero { min-height: 720px; background-position: 66% center; }
+  .hero::before { background: linear-gradient(90deg, #070a0c 0%, rgb(7 10 12 / .76) 57%, rgb(7 10 12 / .16)), linear-gradient(0deg, #070a0c 0%, transparent 42%); }
+  .hero-inner { padding: 132px 0 60px; }
+  h1 { font-size: clamp(3rem, 17vw, 5rem); }
+  .section { padding: 76px 0; }
+  .section-grid, .card-grid { grid-template-columns: 1fr; }
+  .pipeline-art { min-height: 300px; }
+  .showcase-card { min-height: 300px; }
+  .footer-inner { align-items: flex-start; flex-direction: column; }
+}
